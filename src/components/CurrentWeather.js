@@ -1,12 +1,11 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Button } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
-        <Text>Current Weather</Text>
         <Feather name="sun" size={100} />
         <Text style={styles.temp}>6</Text>
         <Text style={styles.feels}>Feels like 5</Text>
@@ -18,7 +17,14 @@ const CurrentWeather = () => {
         <View style={styles.bodyWrapper}>
           <Text style={styles.description}>It's sunny</Text>
           <Text style={styles.message}>Its perfect t-shirt weather</Text>
+          <Button
+            title="Go to Upcoming Weather"
+            onPress={() =>
+                navigation.navigate('Upcoming Weather')
+            }
+            />
         </View>
+        
 
     </SafeAreaView>
   );
